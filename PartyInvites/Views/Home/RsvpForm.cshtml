@@ -7,30 +7,34 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>RsvpForm</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-    <form asp-action="RsvpForm" method="post">
-        <div>
-            <label asp-for="Name">Your Name:</label>
-            <input asp-for="Name" />
+    <h5 class="bg-primary text-white text-center m-2 p-2">RSVP</h5>
+    <form asp-action="RsvpForm" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="form-label">Your Name:</label>
+            <input asp-for="Name" class="form-control"/>
         </div>
-        <div>
-            <label asp-for="Email">Your Email:</label>
-            <input asp-for="Email" />
+        <div class="form-group">
+            <label asp-for="Email" class="form-label">Your Email:</label>
+            <input asp-for="Email" class="form-control"/>
         </div>
-        <div>
-            <label asp-for="Phone">Your Phone:</label>
-            <input asp-for="Phone" />
+        <div class="form-group">
+            <label asp-for="Phone" class="form-label">Your Phone:</label>
+            <input asp-for="Phone" class="form-control" />
         </div>
-        <div>
-            <label asp-for="WillAttend">Will you attend?</label>
-            <select asp-for="WillAttend">
+        <div class="form-group">
+            <label asp-for="WillAttend" class="form-label">Will you attend?</label>
+            <select asp-for="WillAttend" class="form-control">
                 <option value="">Choose an option</option>
                 <option value="true">Yes, I will be there</option>
                 <option value="false">No, I can't come</option>
             </select>
         </div>
-        <button type="submit">Submit RSVP</button>
+        <button type="submit" class="btn btn-primary mt-3">Submit RSVP</button>
     </form>
 </body>
 </html>
