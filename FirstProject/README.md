@@ -19,7 +19,8 @@ how to implement the same thing, using C# syntax, even though I Had some C# expe
 I know how to blend C# and HTML or other technologies, taking advantage of the powerful abilities
 of views.
 
-1. Creating a data Model
+1. Creating a data Model.
+
     Most of the time, data model will take the shape of a class:
     ```
         public class GuestResponse {
@@ -32,7 +33,8 @@ of views.
         }
     ```
 
-2. Defining Action Methods
+2. Defining Action Methods.
+
     Action Methods are defined in controllers and specify the view that will get rendered to the browser.
     They are defined within a controller class like so:
     ```
@@ -50,7 +52,8 @@ of views.
     The razor view engine, when not explicity specified, look at the name of the method to decide which
     view to render the correct view file, which must have the same name.
 
-3. Adding Validation to Data Entries in a Form
+3. Adding Validation to Data Entries in a Form.
+
     It is done by simnply adding the following line, in the model class, on top of the property
     we want to check:
     ```
@@ -58,7 +61,8 @@ of views.
         [EmailAddress] // getting specific about the nature of the data
     ```
 
-4. Adding Style
+4. Adding Style.
+
     It is done directly in the view, just like you would normally do in HTML
     ```
         <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
