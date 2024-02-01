@@ -54,12 +54,14 @@ of views.
 
 3. Adding Validation to Data Entries in a Form.
 
-    It is done by simnply adding the following line, in the model class, on top of the property
+    It is done by simply adding the following line, in the model class, on top of the property
     we want to check:
     ```
         [Required(ErrorMessage = "Please enter your email address")]
         [EmailAddress] // getting specific about the nature of the data
     ```
+    The controller base class provide a property called ModelState. If the ModelState.IsValid returns false
+    then the validation has failed and we can decide how to display the error message in the view
 
 4. Adding Style.
 
