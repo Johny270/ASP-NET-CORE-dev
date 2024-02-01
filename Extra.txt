@@ -1,0 +1,6 @@
+Commands to create a new project using the shell and the mvc template:
+
+- dotnet new globaljson --sdk-version <sdk-version> --output FirstProject
+- dotnet new mvc --no-https --output FirstProject --framework net6.0
+- dotnet new sln -o FirstProject
+- dotnet sln FirstProject add FirstProject
