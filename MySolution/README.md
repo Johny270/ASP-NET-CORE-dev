@@ -36,10 +36,11 @@ of the different tools that are given to us for ASP.NET Core development.
        // cd to your 'project' folder
        dotnet build // To build the project
        dotnet run // to build and run
-       dotnet watch // to use hot relead feature
+       dotnet watch // to use hot reload feature
    ```
 
 3. Managing NuGet packages
+
    The **_dotnet add package_** is used to manage packages
 
    ```
@@ -59,6 +60,7 @@ of the different tools that are given to us for ASP.NET Core development.
    ```
 
 4. Managing Tool Packages
+
    Tool packages install commands that can be used from the command line to perform
    operations on .NET projects.
 
@@ -68,6 +70,7 @@ of the different tools that are given to us for ASP.NET Core development.
    ```
 
 5. Managing client-side packages
+
    Client-side packages contain content that is delivered to the client. They are added to ASP.NET Core
    using **Library Manager (LibMan)** tool. To intall LibMan tool package:
 
