@@ -17,6 +17,9 @@ builder.Services.AddDbContext<StoreDbContext>(opts =>
     opts.UseSqlServer(builder.Configuration["ConnectionStrings:SportsStoreConnection"]);
 });
 
+// Create a service for the IStoreRepository interface that uses EFStoreRepository as the implementation class
+builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
+
 var app = builder.Build();
 
 app.UseStaticFiles();
