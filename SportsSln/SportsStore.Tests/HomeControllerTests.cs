@@ -28,7 +28,7 @@ namespace SportsStore.Tests
             HomeController controller = new HomeController(mock.Object);
 
             // Act
-            ProductsListViewModel result = controller.Index()?.ViewData.Model as ProductsListViewModel ?? new();
+            ProductsListViewModel result = controller.Index(null)?.ViewData.Model as ProductsListViewModel ?? new();
 
             // Assert
             Product[] prodArray = result.Products.ToArray();
@@ -56,7 +56,7 @@ namespace SportsStore.Tests
             controller.PageSize = 3;
 
             // Act
-            ProductsListViewModel result = controller.Index()?.ViewData.Model as ProductsListViewModel ?? new();
+            ProductsListViewModel result = controller.Index(null)?.ViewData.Model as ProductsListViewModel ?? new();
 
             // Assert
             Product[] prodArray = result.Products.ToArray();
@@ -90,7 +90,7 @@ namespace SportsStore.Tests
             };
 
             // Act
-            ProductsListViewModel result = controller.Index(2).ViewData.Model as ProductsListViewModel ?? new();
+            ProductsListViewModel result = controller.Index(null, 2).ViewData.Model as ProductsListViewModel ?? new();
 
             // Assert
             PagingInfo pageInfo = result.PagingInfo;
