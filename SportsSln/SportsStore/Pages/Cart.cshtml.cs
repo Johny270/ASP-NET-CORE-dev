@@ -5,7 +5,7 @@ using SportsStore.Models;
 
 namespace SportsStore.Pages
 {
-    public class CartModel : PageModel
+    public class CartModel : PageModel // - Handle different types of HTTP requests, update state before rendering the view.
     {
         private IStoreRepository repository;
 
