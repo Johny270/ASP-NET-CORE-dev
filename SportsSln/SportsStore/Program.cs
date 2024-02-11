@@ -20,9 +20,15 @@ builder.Services.AddDbContext<StoreDbContext>(opts =>
 // Create a service for the IStoreRepository interface that uses EFStoreRepository as the implementation class
 builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 
+builder.Services.AddRazorPages();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 app.UseStaticFiles();
+app.UseSession();
+
 app.MapControllerRoute("catPage", "{category}/Page{productPage:int}", new { Controller = "Home", action = "Index" });
 app.MapControllerRoute("page", "Page/{productPage:int}", new { Controller = "Home", action = "Index", productPage = 1 });
 app.MapControllerRoute("category", "{category}", new { Controller = "Home", action = "Index", productPage = 1 });
@@ -30,6 +36,7 @@ app.MapControllerRoute("pagination", "Products/Page{ProductPage}", new { Control
     productPage = 1 });
 
 app.MapDefaultControllerRoute();
+app.MapRazorPages();
 
 SeedData.EnsurePopulated(app);
 
