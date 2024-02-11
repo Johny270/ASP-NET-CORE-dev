@@ -28,7 +28,7 @@ namespace SportsStore.Tests
             // Assert 
             Assert.Equal(2, results.Length);
             Assert.Equal(p1, results[0].Product);
-            Assert.Equal(p2, results[0].Product);
+            Assert.Equal(p2, results[1].Product);
 
 
         }
@@ -112,7 +112,7 @@ namespace SportsStore.Tests
             target.AddItem(p2, 1);
 
             // Act - reset the cart
-            target.clear();
+            target.Clear();
 
             // Assert
             Assert.Empty(target.Lines);

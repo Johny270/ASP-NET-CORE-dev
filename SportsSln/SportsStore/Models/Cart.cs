@@ -26,7 +26,7 @@
 
         public decimal ComputeTotalValue() => Lines.Sum(e => e.Product.Price * e.Quantity);
 
-        public void clear() => Lines.Clear();
+        public void Clear() => Lines.Clear();
     }
 
     public class CartLine
