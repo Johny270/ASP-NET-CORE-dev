@@ -24,6 +24,14 @@ builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 
+// Receives the collection of services that have been registered and passes the collection to the GetCart method
+// of the SessionCart class. Cart service will be handled by creating SessionCart objects, which will serialize
+// themselves as session data when they are modified.
+builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+// Specifies that the same object should always be used. Use the HttpContextAccessor class when implementations of
+// the IHttpContextAccessor interface are required.
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 var app = builder.Build();
 
 app.UseStaticFiles();
